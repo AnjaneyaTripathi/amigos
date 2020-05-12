@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<head>
+  <style>
+    #box {
+      padding: 7% 10%;
+      font-family: "Raleway", sans-serif;
+      background: #eeeeee;
+      color: #1e1e1e;
+      text-align: center;
+    }
+
+    h3 {
+      font-family: "Anton", sans-serif;
+    }
+
+    .input {
+      width: 80%;
+      margin: 1% 10%;
+      border-radius: 5px;
+      padding: 3px;
+      text-align: center;
+    }
+
+    .login {
+      width: 80%;
+      margin: 1% 10%;
+      border-radius: 5px;
+      padding: 3px;
+      text-align: center;
+      font-family: "Raleway", sans-serif;
+      background: #3fa6e2;
+      color: #fff;
+      border: 2px solid #3fa6e2;
+    }
+
+    .graph:hover {
+      text-align: center;
+      width: 100%;
+      background: #3fa6e2;
+      transition-duration: 0.6s;
+      transition-delay: 0.2s;
+      padding: 10px;
+      color: #eeeeee;
+      border: 0px;
+    }
+    .graph {
+      text-align: center;
+      width: 100%;
+      background-color: #eeeeee;
+      transition-duration: 0.6s;
+      transition-delay: 0.2s;
+      border: 0px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    body,
+    html {
+      background: #eeeeee;
+    }
+  </style>
+  <title>View Employees</title>
+  <link
+    href="https://fonts.googleapis.com/css?family=Josefin+Sans|Raleway&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Anton&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous"
+  />
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg sticky-top" style="background: #3fa6e2;">
+    <a
+      class="navbar-brand"
+      id="companyName"
+      style="color: #fff; font-family: 'Raleway', sans-serif; font-size: 35px; margin-left: 2%;"
+    >
+      <span><strong>ramco</strong></span>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"
+        ><i class="fa fa-navicon" style="font-size: 35px"></i
+      ></span>
+    </button>
+    <div
+      class="collapse navbar-collapse"
+      id="navbarSupportedContent"
+      style="margin-right: 2%"
+    >
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="/emp"
+            style="color: #fff; font-family: 'Raleway', sans-serif; font-size: 16px"
+            >My Team</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            style="color: #fff; font-family: 'Raleway', sans-serif; font-size: 16px"
+            href="/logout"
+            >Logout</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div id="box">
+    <h3>Details of Your Team</h3>
+    <p>
+      Find out the Happiness Index of your Team, Graphical Analysis and Proactive Suggestions.
+    </p>
+    <hr />
+    <div class="emp">
+      <div class="row">
+        <div class="col-md-4">Rajat Mehta</div>
+        <div class="col-md-4">13745</div>
+        <div class="col-md-4">
+          <button class="graph" onclick="window.location='/dashboard/13745';">
+            View Details
+          </button>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-md-4">Rashi Bhardwaj</div>
+        <div class="col-md-4">13744</div>
+        <div class="col-md-4">
+          <button class="graph" onclick="window.location='/dashboard/13744';">
+            View Details
+          </button>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-md-4">Anjaneya Tripathi</div>
+        <div class="col-md-4">PJT853</div>
+        <div class="col-md-4">
+          <button class="graph" onclick="window.location='/dashboard/853';">
+            View Details
+          </button>
+        </div>
+      </div>
+      <hr />
+    </div>
+  </div>
+</body>

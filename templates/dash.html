@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<head>
+  <style>
+    #box {
+      padding: 1% 5%;
+      font-family: "Raleway", sans-serif;
+      background: #eeeeee;
+      color: #1e1e1e;
+    }
+
+    .input {
+      width: 80%;
+      margin: 1% 10%;
+      border-radius: 5px;
+      padding: 3px;
+      text-align: center;
+    }
+    h2 {
+      font-family: "Anton", sans-serif;
+      text-align: center;
+    }
+
+    .login {
+      width: 80%;
+      margin: 1% 10%;
+      border-radius: 5px;
+      padding: 3px;
+      text-align: center;
+      font-family: "Raleway", sans-serif;
+      background: #3fa6e2;
+      color: #fff;
+      border: 2px solid #3fa6e2;
+    }
+
+    body,
+    html {
+      background: #eeeeee;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    #stats {
+      border: 5px solid #1e1e1e;
+    }
+
+    #emoji {
+      width: 10%;
+    }
+
+    .extra {
+      display: none;
+      font-family: "Raleway", sans-serif;
+      color: #eee;
+    }
+
+    .graph:hover {
+      text-align: center;
+      width: 100%;
+      background: #3fa6e2;
+      transition-duration: 0.6s;
+      transition-delay: 0.2s;
+      padding: 10px;
+      color: #eeeeee;
+      border: 0px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 25px;
+    }
+
+    .graph:hover .extra {
+      display: block;
+      font-size: 15px;
+      font-family: "Raleway", sans-serif;
+    }
+
+    .graph {
+      text-align: center;
+      font-family: "Anton", sans-serif;
+      width: 100%;
+      background-color: #eeeeee;
+      transition-duration: 0.6s;
+      transition-delay: 0.2s;
+      border: 0px;
+      margin-bottom: 10px;
+      margin-top: 10px;
+    }
+
+    #suggestions {
+      padding-top: 6%;
+      padding-bottom: 6%;
+    }
+  </style>
+  <title>View Employees</title>
+  <link
+    href="https://fonts.googleapis.com/css?family=Josefin+Sans|Raleway&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Anton&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous"
+  />
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg sticky-top" style="background: #3fa6e2;">
+    <a
+      class="navbar-brand"
+      id="companyName"
+      style="color: #fff; font-family: 'Raleway', sans-serif; font-size: 35px; margin-left: 2%;"
+    >
+      <span><strong>ramco</strong></span>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"
+        ><i class="fa fa-navicon" style="font-size: 35px"></i
+      ></span>
+    </button>
+    <div
+      class="collapse navbar-collapse"
+      id="navbarSupportedContent"
+      style="margin-right: 2%"
+    >
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="/emp"
+            style="color: #fff; font-family: 'Raleway', sans-serif; font-size: 16px"
+            >My Team</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            style="color: #fff; font-family: 'Raleway', sans-serif; font-size: 16px"
+            href="/logout"
+            >Logout</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div id="box">
+    <div class="row">
+      <div class="col-sm-7" id="graph">
+        <h2>Graphical Analysis</h2>
+        <img id="stats" src="{{url_for('static', filename=img_id + '.png')}}" />
+      </div>
+      <div class="col-sm-5">
+        <h2 style="visibility: hidden">Graphical Analysis</h2>
+        <button
+          class="graph"
+          onclick="window.location='/dashboard/{{id}}/plot1/{{HI}}/{{str_hi}}';"
+        >
+          Daily Emotion Count
+          <span class="extra"
+            >Counts the occurence of each emotion and plots it against
+            time</span
+          >
+        </button>
+        <!-- <hr /> -->
+        <button
+          class="graph"
+          onclick="window.location='/dashboard/{{id}}/plot2/{{HI}}/{{str_hi}}';"
+        >
+          Change in Emotion with Passage of Time
+          <span class="extra"
+            >As the day progresses, the emotional changes are plotted against
+            time</span
+          >
+        </button>
+        <!-- <hr /> -->
+        <button
+          class="graph"
+          onclick="window.location='/dashboard/{{id}}/plot3/{{HI}}/{{str_hi}}';"
+        >
+          Boredom Count
+          <span class="extra"
+            >This graph represents the split up of how a person displays his
+            boredom as a piechart</span
+          >
+        </button>
+        <hr />
+        <div id="suggestions">
+          Your team member {{id}} has the following statistics:
+          <div>
+            Happiness Index is {{HI}}
+          </div>
+          <br>
+          <h5>Suggestions</h5>
+          <p>{{str_hi}}</p>
+        </div>
+        <hr />
+        <button class="login" onclick="window.location='/events';">
+          Upcoming Events in the Vicinity
+        </button>
+      </div>
+    </div>
+  </div>
+</body>

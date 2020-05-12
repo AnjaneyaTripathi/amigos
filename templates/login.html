@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<head>
+  <style>
+    #box {
+      font-family: "Raleway", sans-serif;
+      background: #eeeeee;
+      color: #1e1e1e;
+      text-align: center;
+    }
+
+    img {
+      width: 70%;
+      margin: 6% auto;
+    }
+
+    #formm {
+      padding-top: 15%;
+    }
+
+    .input {
+      width: 60%;
+      margin: 1% 10%;
+      border-radius: 5px;
+      padding: 3px;
+      text-align: center;
+    }
+
+    .login {
+      width: 80%;
+      margin: 1% 10%;
+      border-radius: 5px;
+      padding: 3px;
+      text-align: center;
+      font-family: "Raleway", sans-serif;
+      background: #3fa6e2;
+      color: #fff;
+      border: 2px solid #3fa6e2;
+    }
+
+    body,
+    html {
+      background: #eeeeee;
+    }
+  </style>
+  <title>Ramco || Login</title>
+  <link
+    href="https://fonts.googleapis.com/css?family=Josefin+Sans|Raleway&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Anton&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous"
+  />
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg sticky-top" style="background: #3fa6e2;">
+    <a
+      class="navbar-brand"
+      id="companyName"
+      style="color: #fff; font-family: 'Raleway', sans-serif; font-size: 30px; margin-left: 2%;"
+    >
+      <span><strong>ramco</strong></span>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"
+        ><i class="fa fa-navicon" style="font-size: 35px"></i
+      ></span>
+    </button>
+    <div
+      class="collapse navbar-collapse"
+      id="navbarSupportedContent"
+      style="margin-right: 2%"
+    >
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            style="color: #000; font-family: 'Anton', sans-serif; font-size: 20px"
+            >THRIVE DIGITALLY</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div id="box">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="{{url_for('static', filename='logo.png')}}">
+      </div>
+      <div class="col-md-6" id="formm">
+        <form action="/login" method="POST">
+          <h3>Give a Huge Smile to Login</h3>
+          <hr>
+          <button class="login">Say Cheese!</button>
+        </form>
+      </div>
+    </div>
+    
+  </div>
+</body>
